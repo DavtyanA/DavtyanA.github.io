@@ -1,65 +1,8 @@
-﻿<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <style type="text/css">
-
-      body {
-      background-color: #ffffff;
-      margin: 0px;
-      cursor: none;
-      overflow: hidden;
-      }
-
-    </style>
-  </head>
-  <body>
-    <script type="text/javascript">
-      /**
-       * Return parameter `name` from the URI's query string.
-       */
-      function getParameterByName(name) {
-        var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
-        return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
-      }
-      var imageWidthHalf, imageHeightHalf;
-      
-      var canvas = document.createElement( 'canvas' );
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      canvas.style.display = 'block';
-      document.body.appendChild( canvas );
-
-      var context = canvas.getContext( '2d' );
-
-      var image = document.createElement( 'img' );
-
-      image.addEventListener('load', function() {
-        imageWidthHalf = Math.floor( this.width / 2 );
-        imageHeightHalf = Math.floor( this.height / 2 );
-        document.addEventListener( 'mousemove', onMouseEvent, false );
-        document.addEventListener( 'touchstart', onTouchEvent, false );
-        document.addEventListener( 'touchmove', onTouchEvent, false );
-      }, false );
-      
-      var param = getParameterByName("img");
-      if (param) {
-        image.src = "img/" + param + ".png";
-      }
-      else {
-        image.src = "ruslan.png";
-      }
-      function onMouseEvent( event ) {
-	context.drawImage( image, event.clientX - imageWidthHalf, event.clientY - imageHeightHalf );
-      }
-      function onTouchEvent( event ) {
-        event.preventDefault();
-        for ( var i = 0; i < event.touches.length; i++ ) {
-	  context.drawImage( image, event.touches[i].pageX - imageWidthHalf, event.touches[i].pageY - imageHeightHalf );
-	}
-      }
-    </script>
-  </body>
-</html>
-
+﻿<!doctype html><html lang=""><head><meta charset="utf-8"><meta name="description" content="He protec, he attac, but most importantly he also protec and attac.  Copyright 2017 jknight05."><meta name="viewport" content="width=device-width,initial-scale=1"><title>RUSLAN ZDOROVA EBAT'</title><link rel="apple-touch-icon" href="apple-touch-icon.png"><!-- Place favicon.ico in the root directory --><link rel="stylesheet" href="styles/main.css"></head><body><!--[if lt IE 10]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]--> <img class="preload" src="images/card.png"> <img class="preload" src="images/card-gold.png"><div id="main"></div><!-- Google Analytics: change UA-XXXXX-X to be your site's ID. --><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='https://www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-105591523-1');ga('send','pageview');</script><script src="scripts/vendor.js"></script><script src="scripts/main.js"></script></body></html>
